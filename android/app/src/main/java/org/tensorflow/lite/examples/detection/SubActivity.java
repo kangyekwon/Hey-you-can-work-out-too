@@ -76,7 +76,7 @@ public class SubActivity extends Activity {
 
         btn2 = findViewById(R.id.btn2);
         final Bundle bundle = new Bundle();
-//        foodView = findViewById(R.id.food_list);
+        foodView = findViewById(R.id.food_list);
 //    textView = (TextView) findViewById(R.id.rec_food);
 
         btn3 = findViewById(R.id.btn3);

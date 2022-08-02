@@ -45,8 +45,14 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginRight="10dp"
-        android:text="메인으로 가기" />
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="73dp"
+        android:text="운동기구 사용법 보러가기"
+        app:layout_constraintBottom_toTopOf="@+id/btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>

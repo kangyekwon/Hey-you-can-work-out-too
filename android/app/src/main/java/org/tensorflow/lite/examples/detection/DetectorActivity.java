@@ -333,80 +333,80 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     }
 
     //추천
-    private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                String urls = "https://www.10000recipe.com/recipe/list.html?q=";
-                String tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
-                String one_tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=reco&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
-                if (foodStrings.size() == 1) {
-                    urls += foodStrings.get(0);
-                    String food_one_url = urls + one_tail;
-                    Document doc = Jsoup.connect(food_one_url).get();
-                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-                    htmlContentInStringFormat = title.get(0).text();
-                }
-//                else if (foodStrings.size() == 2){
-//                    for (int i = 0; i < foodStrings.size(); i++) {
-//                        urls += foodStrings.get(i);
-//                        if (i + 1 == foodStrings.size()) {
-//                            continue;
-//                        } else
-//                            urls += "+";
-//                    }
-//                    String food_url = urls + tail;
-//                    Document doc = Jsoup.connect(food_url).get();
-//                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-//                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-//                    htmlContentInStringFormat = title.get(0).text();
+//    private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
 //
-//                }
-//                else if (foodStrings.size() != 0){
-//                    for (int i = 0; i < foodStrings.size(); i++) {
-//                        urls += foodStrings.get(i);
-//                        if (i + 1 == foodStrings.size()) {
-//                            continue;
-//                        } else
-//                            urls += "+";
-//                    }
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//        }
 //
-//                    String food_url = urls + tail;
-//                    Document doc = Jsoup.connect(food_url).get();
+//        @Override
+//        protected Void doInBackground(Void... params) {
+//            try {
+//                String urls = "https://www.youtube.com/results?search_query=";
+//                String tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
+//                String one_tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=reco&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
+//                if (foodStrings.size() == 1) {
+//                    urls += foodStrings.get(0);
+//                    String food_one_url = urls + one_tail;
+//                    Document doc = Jsoup.connect(food_one_url).get();
 //                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
 //                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
 //                    htmlContentInStringFormat = title.get(0).text();
 //                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            textView.setText("현재 추천 요리 : "+ htmlContentInStringFormat);
-        }
-    }
+////                else if (foodStrings.size() == 2){
+////                    for (int i = 0; i < foodStrings.size(); i++) {
+////                        urls += foodStrings.get(i);
+////                        if (i + 1 == foodStrings.size()) {
+////                            continue;
+////                        } else
+////                            urls += "+";
+////                    }
+////                    String food_url = urls + tail;
+////                    Document doc = Jsoup.connect(food_url).get();
+////                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
+////                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
+////                    htmlContentInStringFormat = title.get(0).text();
+////
+////                }
+////                else if (foodStrings.size() != 0){
+////                    for (int i = 0; i < foodStrings.size(); i++) {
+////                        urls += foodStrings.get(i);
+////                        if (i + 1 == foodStrings.size()) {
+////                            continue;
+////                        } else
+////                            urls += "+";
+////                    }
+////
+////                    String food_url = urls + tail;
+////                    Document doc = Jsoup.connect(food_url).get();
+////                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
+////                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
+////                    htmlContentInStringFormat = title.get(0).text();
+////                }
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void result) {
+//            textView.setText("현재 추천 요리 : "+ htmlContentInStringFormat);
+//        }
+//    }
 
     public void onButton2Clicked(View view) {
-        String urls = "https://www.10000recipe.com/";
+        String urls = "https://www.youtube.com/results?search_query=";
         if (foodStrings.size() == 0) {
             Toast.makeText(
                     this,
-                    "음식을 먼저 인식시켜주세요",
+                    "운동기구를 먼저 인식시켜주세요",
                     Toast.LENGTH_LONG)
                     .show();
         } else {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+link));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+foodStrings.get(0)));
             startActivity(intent);
         }
     }
@@ -422,11 +422,11 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         return DESIRED_PREVIEW_SIZE;
     }
 
-// Which detection model to use: by default uses Tensorflow Object Detection API frozen
+    // Which detection model to use: by default uses Tensorflow Object Detection API frozen
 // checkpoints.
-private enum DetectorMode {
-    TF_OD_API;
-}
+    private enum DetectorMode {
+        TF_OD_API;
+    }
 
     @Override
     protected void setUseNNAPI(final boolean isChecked) {

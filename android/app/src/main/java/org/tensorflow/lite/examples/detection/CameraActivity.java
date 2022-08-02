@@ -147,23 +147,15 @@ public abstract class CameraActivity extends AppCompatActivity
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), SubActivity.class);
-//                intent.putExtra("name0", foodStrings.get(0));
-                if (foodStrings.size() == 1) {
-                  intent.putExtra("name0", foodStrings.get(0));
+                try {
+                  intent.putExtra("name0", foodStrings.get(position));
                   startActivity(intent);
-                } else if (foodStrings.size() > 1) {
-                  try {
-                    intent.putExtra("name0", foodStrings.get(0));
-                    intent.putExtra("name1", foodStrings.get(1));
-                    intent.putExtra("name2", foodStrings.get(2));
-                    intent.putExtra("name3", foodStrings.get(3));
-                    intent.putExtra("name4", foodStrings.get(4));
-                    intent.putExtra("name5", foodStrings.get(5));
-                  } catch (Exception e) {
-                    e.printStackTrace();
-                    throw e;
-                  }
+//                  System.out.println(position);
+                } catch (Exception e) {
+                  e.printStackTrace();
+                  throw e;
                 }
+
               }
             });
 

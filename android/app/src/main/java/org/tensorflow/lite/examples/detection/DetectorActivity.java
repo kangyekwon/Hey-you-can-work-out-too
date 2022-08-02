@@ -315,8 +315,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                 }
                                             }
                                             foodadapter.notifyDataSetChanged();
-                                            JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
-                                            jsoupAsyncTask.execute();
+//                                            JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
+//                                            jsoupAsyncTask.execute();
                                         } catch (Exception e) {
                                             e.printStackTrace();
                                         }
@@ -354,36 +354,36 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
                     htmlContentInStringFormat = title.get(0).text();
                 }
-                else if (foodStrings.size() == 2){
-                    for (int i = 0; i < foodStrings.size(); i++) {
-                        urls += foodStrings.get(i);
-                        if (i + 1 == foodStrings.size()) {
-                            continue;
-                        } else
-                            urls += "+";
-                    }
-                    String food_url = urls + tail;
-                    Document doc = Jsoup.connect(food_url).get();
-                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-                    htmlContentInStringFormat = title.get(0).text();
-
-                }
-                else if (foodStrings.size() != 0){
-                    for (int i = 0; i < foodStrings.size(); i++) {
-                        urls += foodStrings.get(i);
-                        if (i + 1 == foodStrings.size()) {
-                            continue;
-                        } else
-                            urls += "+";
-                    }
-
-                    String food_url = urls + tail;
-                    Document doc = Jsoup.connect(food_url).get();
-                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-                    htmlContentInStringFormat = title.get(0).text();
-                }
+//                else if (foodStrings.size() == 2){
+//                    for (int i = 0; i < foodStrings.size(); i++) {
+//                        urls += foodStrings.get(i);
+//                        if (i + 1 == foodStrings.size()) {
+//                            continue;
+//                        } else
+//                            urls += "+";
+//                    }
+//                    String food_url = urls + tail;
+//                    Document doc = Jsoup.connect(food_url).get();
+//                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
+//                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
+//                    htmlContentInStringFormat = title.get(0).text();
+//
+//                }
+//                else if (foodStrings.size() != 0){
+//                    for (int i = 0; i < foodStrings.size(); i++) {
+//                        urls += foodStrings.get(i);
+//                        if (i + 1 == foodStrings.size()) {
+//                            continue;
+//                        } else
+//                            urls += "+";
+//                    }
+//
+//                    String food_url = urls + tail;
+//                    Document doc = Jsoup.connect(food_url).get();
+//                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
+//                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
+//                    htmlContentInStringFormat = title.get(0).text();
+//                }
 
             } catch (IOException e) {
                 e.printStackTrace();

@@ -45,30 +45,8 @@ public class SubActivity extends Activity {
                 String urls = "https://www.youtube.com/results?search_query=";
                 Intent intent = getIntent();
                 String name0 = intent.getExtras().getString("name0");
-//                String name1 = intent.getExtras().getString("name1");
-//                String name2 = intent.getExtras().getString("name2");
-//                String name3 = intent.getExtras().getString("name3");
-//                String name4 = intent.getExtras().getString("name4");
-//                String name5 = intent.getExtras().getString("name5");
-
                 Intent intents = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name0));
                 startActivity(intents);
-//                Intent intents = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name1));
-//
-//
-//                startActivity(intents1);
-//
-//                Intent intents2 = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name2));
-//                startActivity(intents2);
-//
-//                Intent intents3 = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name3));
-//                startActivity(intents3);
-//
-//                Intent intents4 = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name4));
-//                startActivity(intents4);
-//
-//                Intent intents5 = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+name5));
-//                startActivity(intents5);
             }
         });
 

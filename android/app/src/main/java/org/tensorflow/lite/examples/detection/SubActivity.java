@@ -76,7 +76,7 @@ public class SubActivity extends Activity {
 
         btn2 = findViewById(R.id.btn2);
         final Bundle bundle = new Bundle();
-//        foodView = findViewById(R.id.food_list);
+        foodView = findViewById(R.id.food_list);
 //    textView = (TextView) findViewById(R.id.rec_food);
 
         btn3 = findViewById(R.id.btn3);
@@ -115,7 +115,4 @@ public class SubActivity extends Activity {
             }
         });
     }
-//    여기부터는 이제 만드는중 /// 운동 종류 jsoup
-//    1
-
 }

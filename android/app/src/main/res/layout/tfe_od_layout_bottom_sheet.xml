@@ -29,21 +29,7 @@
             android:src="@drawable/icn_chevron_up" />
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/rec_food"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="현재 추천 요리 : " />
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onButton2Clicked"
-        android:text="추천 요리 레시피 확인하기"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
 
     <View
         android:layout_width="match_parent"
@@ -102,11 +88,10 @@
     <!-- TODO(b/112541284): Unhide when new NNAPI delegate is used. -->
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="인식한 식재료" />
+        android:text="인식한 운동기구" />
 
 
     <LinearLayout

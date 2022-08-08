@@ -598,7 +598,7 @@ public class SubActivity extends Activity {
                         textviewHtmlDocument.setText(a9);
                     } else if (workoutItem.getName().contains("시티드 딥스")) {
                         textviewHtmlDocument.setText(a10);
-                    } else if (workoutItem.getName().contains("숄 더 프레스")) {
+                    } else if (workoutItem.getName().contains("숄더 프레스")) {
                         textviewHtmlDocument.setText(a11);
                     } else if (workoutItem.getName().contains("데드 프레스")) {
                         textviewHtmlDocument.setText(a12);

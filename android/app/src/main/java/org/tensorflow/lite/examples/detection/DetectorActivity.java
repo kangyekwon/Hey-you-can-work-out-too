@@ -396,20 +396,20 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 //            textView.setText("현재 추천 요리 : "+ htmlContentInStringFormat);
 //        }
 //    }
-
-    public void onButton2Clicked(View view) {
-        String urls = "https://www.youtube.com/results?search_query=";
-        if (foodStrings.size() == 0) {
-            Toast.makeText(
-                    this,
-                    "운동기구를 먼저 인식시켜주세요",
-                    Toast.LENGTH_LONG)
-                    .show();
-        } else {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+foodStrings.get(0)));
-            startActivity(intent);
-        }
-    }
+//
+//    public void onButton2Clicked(View view) {
+//        String urls = "https://www.youtube.com/results?search_query=";
+//        if (foodStrings.size() == 0) {
+//            Toast.makeText(
+//                    this,
+//                    "운동기구를 먼저 인식시켜주세요",
+//                    Toast.LENGTH_LONG)
+//                    .show();
+//        } else {
+//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls+foodStrings.get(0)));
+//            startActivity(intent);
+//        }
+//    }
 
 
     @Override

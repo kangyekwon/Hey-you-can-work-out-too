@@ -120,6 +120,7 @@ public abstract class CameraActivity extends AppCompatActivity
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
+
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.tfe_od_activity_camera);
@@ -199,9 +200,9 @@ public abstract class CameraActivity extends AppCompatActivity
             });
 
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
-    gestureLayout = findViewById(R.id.gesture_layout);
+//    gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
-    bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
+//    bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
     modelView = findViewById((R.id.model_list));
 
     modelStrings = getModelStrings(getAssets(), ASSET_PATH);
@@ -219,23 +220,23 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });
-
-    ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
-    vto.addOnGlobalLayoutListener(
-            new ViewTreeObserver.OnGlobalLayoutListener() {
-              @Override
-              public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-                  gestureLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                  gestureLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
-                //                int width = bottomSheetLayout.getMeasuredWidth();
-                int height = gestureLayout.getMeasuredHeight();
-
-                sheetBehavior.setPeekHeight(height);
-              }
-            });
+/// 올리는거 203,205 포함
+//    ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
+//    vto.addOnGlobalLayoutListener(
+//            new ViewTreeObserver.OnGlobalLayoutListener() {
+//              @Override
+//              public void onGlobalLayout() {
+//                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+//                  gestureLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+//                } else {
+//                  gestureLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+//                }
+//                //                int width = bottomSheetLayout.getMeasuredWidth();
+//                int height = gestureLayout.getMeasuredHeight();
+//
+//                sheetBehavior.setPeekHeight(height);
+//              }
+//            });
     sheetBehavior.setHideable(false);
 
     sheetBehavior.setBottomSheetCallback(

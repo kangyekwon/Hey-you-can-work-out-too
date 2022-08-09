@@ -9,53 +9,55 @@
     android:padding="5dp">
 
     <LinearLayout
-        android:layout_width="94dp"
-        android:layout_height="210dp"
+        android:layout_width="90dp"
+        android:layout_height="187dp"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/border_btn3">
 
         <ImageView
             android:id="@+id/iv_icon"
-            android:layout_width="94dp"
+            android:layout_width="90dp"
             android:layout_height="0dp"
-            android:layout_weight="75"
-            android:background="@drawable/border"/>
+            android:layout_weight="70"
+            android:background="@drawable/border_top"/>
 
         <LinearLayout
-            android:layout_width="94dp"
+            android:layout_width="90dp"
             android:layout_height="0dp"
-            android:layout_weight="25"
-            android:orientation="vertical"
-            android:background="@drawable/border">
+            android:layout_weight="30"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="94dp"
-                android:layout_height="32dp"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text=""/>
+                android:text=""
+                android:background="@drawable/border_central"/>
 
             <LinearLayout
-                android:layout_width="94dp"
-                android:layout_height="19dp"
+                android:layout_width="90dp"
+                android:layout_height="21dp"
                 android:orientation="horizontal"
                 >
 
                 <TextView
                     android:id="@+id/tv_set"
-                    android:layout_width="47dp"
+                    android:layout_width="45dp"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
                     android:text=""
-                    android:background="@drawable/border"/>
+                    android:background="@drawable/border_left"/>
 
                 <TextView
                     android:id="@+id/tv_num"
-                    android:layout_width="47dp"
+                    android:layout_width="45dp"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
                     android:text=""
-                    android:background="@drawable/border"/>
+                    android:background="@drawable/border_right"/>
+
             </LinearLayout>
 
         </LinearLayout>

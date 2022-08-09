@@ -15,7 +15,6 @@
  */
 
 package org.tensorflow.lite.examples.detection;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -38,19 +37,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-import android.os.AsyncTask;
-
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.tensorflow.lite.examples.detection.customview.OverlayView;
 import org.tensorflow.lite.examples.detection.customview.OverlayView.DrawCallback;
 import org.tensorflow.lite.examples.detection.env.BorderedText;
@@ -67,7 +58,6 @@ import org.tensorflow.lite.examples.detection.tracking.MultiBoxTracker;
  */
 public class DetectorActivity extends CameraActivity implements OnImageAvailableListener {
     private static final Logger LOGGER = new Logger();
-
     private static final DetectorMode MODE = DetectorMode.TF_OD_API;
     private static final float MINIMUM_CONFIDENCE_TF_OD_API = 0.65f;
     private static final boolean MAINTAIN_ASPECT = true;
@@ -295,7 +285,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                 mappedRecognitions.add(result);
                             }
                         }
-
                         tracker.trackResults(mappedRecognitions, currTimestamp);
                         trackingOverlay.postInvalidate();
 
@@ -307,7 +296,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                     public void run() {
                                         try {
                                             ArrayAdapter foodadapter = (ArrayAdapter) foodView.getAdapter();
-
                                             for (final MultiBoxTracker.TrackedRecognition recognition : tracker.trackedObjects) {
                                                 set.add(recognition.title);
                                                 if (!foodStrings.contains(recognition.title)) {
@@ -315,88 +303,18 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                 }
                                             }
                                             foodadapter.notifyDataSetChanged();
-//                                            JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
-//                                            jsoupAsyncTask.execute();
+
                                         } catch (Exception e) {
                                             e.printStackTrace();
                                         }
-
                                         showCropInfo(cropCopyBitmap.getWidth() + "x" + cropCopyBitmap.getHeight());
                                         showInference(lastProcessingTimeMs + "ms");
-
-                                        //showFrameInfo(previewWidth + "x" + previewHeight);
                                     }
-
                                 });
                     }
                 });
     }
 
-    //추천
-//    private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
-//
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Void... params) {
-//            try {
-//                String urls = "https://www.youtube.com/results?search_query=";
-//                String tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
-//                String one_tail = "&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=reco&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=";
-//                if (foodStrings.size() == 1) {
-//                    urls += foodStrings.get(0);
-//                    String food_one_url = urls + one_tail;
-//                    Document doc = Jsoup.connect(food_one_url).get();
-//                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-//                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-//                    htmlContentInStringFormat = title.get(0).text();
-//                }
-////                else if (foodStrings.size() == 2){
-////                    for (int i = 0; i < foodStrings.size(); i++) {
-////                        urls += foodStrings.get(i);
-////                        if (i + 1 == foodStrings.size()) {
-////                            continue;
-////                        } else
-////                            urls += "+";
-////                    }
-////                    String food_url = urls + tail;
-////                    Document doc = Jsoup.connect(food_url).get();
-////                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-////                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-////                    htmlContentInStringFormat = title.get(0).text();
-////
-////                }
-////                else if (foodStrings.size() != 0){
-////                    for (int i = 0; i < foodStrings.size(); i++) {
-////                        urls += foodStrings.get(i);
-////                        if (i + 1 == foodStrings.size()) {
-////                            continue;
-////                        } else
-////                            urls += "+";
-////                    }
-////
-////                    String food_url = urls + tail;
-////                    Document doc = Jsoup.connect(food_url).get();
-////                    Elements title = doc.select(".rcp_m_list2").select(".common_sp_list_li").select(".common_sp_caption").select(".common_sp_caption_tit");
-////                    link = doc.select(".rcp_m_list2").select(".common_sp_list_li").select("div[class=common_sp_thumb] a").attr("href");
-////                    htmlContentInStringFormat = title.get(0).text();
-////                }
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void result) {
-//            textView.setText("현재 추천 요리 : "+ htmlContentInStringFormat);
-//        }
-//    }
-//
 //    public void onButton2Clicked(View view) {
 //        String urls = "https://www.youtube.com/results?search_query=";
 //        if (foodStrings.size() == 0) {

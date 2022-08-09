@@ -15,6 +15,7 @@ limitations under the License.
 
 package org.tensorflow.lite.examples.detection.tracking;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -48,7 +49,7 @@ public class MultiBoxTracker {
           Color.YELLOW,
           Color.CYAN,
           Color.MAGENTA,
-          Color.WHITE,
+          Color.GRAY,
           Color.parseColor("#55FF55"),
           Color.parseColor("#FFA500"),
           Color.parseColor("#FF8888"),
@@ -56,7 +57,7 @@ public class MultiBoxTracker {
           Color.parseColor("#FFFFAA"),
           Color.parseColor("#55AAAA"),
           Color.parseColor("#AA33AA"),
-          Color.parseColor("#0D0068")
+          Color.parseColor("#9F9F9F")
   };
   final List<Pair<Float, RectF>> screenRects = new LinkedList<Pair<Float, RectF>>();
   private final Logger logger = new Logger();
@@ -97,7 +98,7 @@ public class MultiBoxTracker {
 
   public synchronized void drawDebug(final Canvas canvas) {
     final Paint textPaint = new Paint();
-    textPaint.setColor(Color.WHITE);
+    textPaint.setColor(Color.GRAY);
     textPaint.setTextSize(60.0f);
 
     final Paint boxPaint = new Paint();
@@ -145,7 +146,7 @@ public class MultiBoxTracker {
       float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
       canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
 
-      String labelString =
+      @SuppressLint("DefaultLocale") String labelString =
               !TextUtils.isEmpty(recognition.title)
                       ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
                       : String.format("%.2f", (100 * recognition.detectionConfidence));

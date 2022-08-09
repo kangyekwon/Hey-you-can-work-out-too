@@ -31,17 +31,14 @@ import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
 import android.media.ImageReader.OnImageAvailableListener;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Message;
 import android.os.Trace;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
@@ -49,24 +46,20 @@ import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Objects;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.tensorflow.lite.examples.detection.env.ImageUtils;
 import org.tensorflow.lite.examples.detection.env.Logger;
-import java.io.IOException;
+
 
 public abstract class CameraActivity extends AppCompatActivity
         implements OnImageAvailableListener,
@@ -126,7 +119,7 @@ public abstract class CameraActivity extends AppCompatActivity
     setContentView(R.layout.tfe_od_activity_camera);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayShowTitleEnabled(false);
+    Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
     setNumThreads(5);
 
     if (hasPermission()) {
@@ -134,10 +127,10 @@ public abstract class CameraActivity extends AppCompatActivity
     } else {
       requestPermission();
     }
-    //여기가 음식리스트
+
+    // 운동기구 리스트
     final Bundle bundle = new Bundle();
     foodView = findViewById(R.id.food_list);
-//    textView = (TextView) findViewById(R.id.rec_food);
 
     ArrayAdapter<String> foodAdapter =
             new ArrayAdapter<>(
@@ -156,7 +149,6 @@ public abstract class CameraActivity extends AppCompatActivity
                   e.printStackTrace();
                   throw e;
                 }
-
               }
             });
 
@@ -167,19 +159,12 @@ public abstract class CameraActivity extends AppCompatActivity
                                      int position, long id) {
         foodStrings.remove(position);
         foodAdapter.notifyDataSetChanged();
-        // 이벤트 처리 종료 , 여기만 리스너 적용시키고 싶으면 true , 아니면 false
         return true;
+        // 이벤트 처리 종료
       }
     });
 
-
-
-
-
-    //threadsTextView = findViewById(R.id.threads);
     currentNumThreads = Integer.parseInt("5");
-    //plusImageView = findViewById(R.id.plus);
-    //minusImageView = findViewById(R.id.minus);
     deviceView = findViewById(R.id.device_list);
     deviceStrings.add("CPU");
     deviceStrings.add("GPU");
@@ -200,9 +185,9 @@ public abstract class CameraActivity extends AppCompatActivity
             });
 
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
-//    gestureLayout = findViewById(R.id.gesture_layout);
+    gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
-//    bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
+    bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
     modelView = findViewById((R.id.model_list));
 
     modelStrings = getModelStrings(getAssets(), ASSET_PATH);
@@ -220,24 +205,21 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });
-/// 올리는거 203,205 포함
-//    ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
-//    vto.addOnGlobalLayoutListener(
-//            new ViewTreeObserver.OnGlobalLayoutListener() {
-//              @Override
-//              public void onGlobalLayout() {
-//                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-//                  gestureLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-//                } else {
-//                  gestureLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-//                }
-//                //                int width = bottomSheetLayout.getMeasuredWidth();
+// 바텀시트 정리
+    ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
+    vto.addOnGlobalLayoutListener(
+            new ViewTreeObserver.OnGlobalLayoutListener() {
+              @Override
+              public void onGlobalLayout() {
+                gestureLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                //                int width = bottomSheetLayout.getMeasuredWidth();
 //                int height = gestureLayout.getMeasuredHeight();
-//
-//                sheetBehavior.setPeekHeight(height);
-//              }
-//            });
-    sheetBehavior.setHideable(false);
+
+                sheetBehavior.setPeekHeight(400);
+                sheetBehavior.setHideable(false);
+              }
+            });
+
 
     sheetBehavior.setBottomSheetCallback(
             new BottomSheetBehavior.BottomSheetCallback() {
@@ -275,8 +257,6 @@ public abstract class CameraActivity extends AppCompatActivity
     //plusImageView.setOnClickListener(this);
     //minusImageView.setOnClickListener(this);
   }
-
-
 
   protected ArrayList<String> getModelStrings(AssetManager mgr, String path){
     ArrayList<String> res = new ArrayList<String>();

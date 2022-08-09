@@ -123,6 +123,7 @@ public class MultiBoxTracker {
     return frameToCanvasMatrix;
   }
 
+  @SuppressLint("DefaultLocale")
   public synchronized void draw(final Canvas canvas) {
     final boolean rotated = sensorOrientation % 180 == 90;
     final float multiplier =
@@ -146,14 +147,12 @@ public class MultiBoxTracker {
       float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
       canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
 
-      @SuppressLint("DefaultLocale") String labelString =
-              !TextUtils.isEmpty(recognition.title)
-                      ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
-                      : String.format("%.2f", (100 * recognition.detectionConfidence));
+      @SuppressLint("DefaultLocale") String labelString;
+      labelString = String.format("%s", recognition.title);
       //            borderedText.drawText(canvas, trackedPos.left + cornerSize, trackedPos.top,
       // labelString);
       borderedText.drawText(
-              canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+              canvas, trackedPos.left + cornerSize, trackedPos.top, labelString, boxPaint);
     }
   }
 

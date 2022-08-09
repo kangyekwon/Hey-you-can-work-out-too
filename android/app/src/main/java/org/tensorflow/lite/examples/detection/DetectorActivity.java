@@ -283,8 +283,10 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                                 result.setLocation(location);
                                 mappedRecognitions.add(result);
+                                Log.e("CHECK", "run: " + result);
                             }
                         }
+
                         tracker.trackResults(mappedRecognitions, currTimestamp);
                         trackingOverlay.postInvalidate();
 

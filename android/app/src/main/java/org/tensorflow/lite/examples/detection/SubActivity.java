@@ -20,7 +20,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import android.util.Log;
 import java.util.ArrayList;
@@ -272,7 +271,7 @@ public class SubActivity extends Activity {
             adapter.addItem(new Workout_Item("4세트", "10회",  "데드 리프트\n(하체)", R.drawable.img_smith));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "10회", "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             // 리스트뷰에 Adapter 설정
             gridview.setAdapter(adapter);
         } else if (name0.equals("치닝디핑")) {
@@ -282,18 +281,18 @@ public class SubActivity extends Activity {
             adapter.addItem(new Workout_Item("4세트", "10회",  "벤치 프레스\n(가슴)", R.drawable.img_smith));
 
             adapter.addItem(new Workout_Item("3세트", "8회",  "치닝디핑\n(등)", R.drawable.img_chiningdipping));
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
             gridview.setAdapter(adapter);
         } else if (name0.equals("숄더프레스머신")) {
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "10회",  "데드 리프트\n(하체)", R.drawable.img_smith));
 
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 컬 머신\n(하체)", R.drawable.img_legcurl));
             gridview.setAdapter(adapter);
@@ -311,27 +310,27 @@ public class SubActivity extends Activity {
         } else if (name0.equals("레그컬머신")) {
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 컬 머신\n(하체)", R.drawable.img_legcurl));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
             gridview.setAdapter(adapter);
         } else if (name0.equals("레그프레스")) {
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 컬 머신\n(하체)", R.drawable.img_legcurl));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
 
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "10회",  "데드 리프트\n(하체)", R.drawable.img_smith));
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
             gridview.setAdapter(adapter);
         } else if (name0.equals("레터럴레이즈머신")) {
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "10회",  "데드 리프트\n(하체)", R.drawable.img_smith));
 
-            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraises));
+            adapter.addItem(new Workout_Item("4세트", "15회", "레터럴 레이즈 머신\n(어깨)", R.drawable.img_lateralraise));
             adapter.addItem(new Workout_Item("4세트", "10회",  "숄더 프레스 머신\n(어깨)", R.drawable.img_shoulderpress));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 프레스 머신\n(하체)", R.drawable.img_legpress));
             adapter.addItem(new Workout_Item("4세트", "12회", "레그 컬 머신\n(하체)", R.drawable.img_legcurl));
@@ -350,28 +349,28 @@ public class SubActivity extends Activity {
         } else if (name0.equals("암컬머신")) {
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("3세트", "8회",  "치닝디핑\n(등)", R.drawable.img_chiningdipping));
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
 
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("4세트", "10회",  "랫 풀 다운\n(등)", R.drawable.img_latpulldown));
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
             gridview.setAdapter(adapter);
         } else if (name0.equals("시티드로우")) {
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("3세트", "8회",  "치닝디핑\n(등)", R.drawable.img_chiningdipping));
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
 
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("4세트", "10회",  "랫 풀 다운\n(등)", R.drawable.img_latpulldown));
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
             gridview.setAdapter(adapter);
         } else if (name0.equals("랫풀다운")) {
             adapter.addItem(new Workout_Item("4세트", "10회",  "랫 풀 다운\n(등)", R.drawable.img_latpulldown));
-            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seatedrow));
+            adapter.addItem(new Workout_Item("4세트", "10회", "시티드 로우 머신\n(등)", R.drawable.img_seated_row));
             adapter.addItem(new Workout_Item("4세트", "10회", "암 컬 머신\n(이두)", R.drawable.img_armcurl));
             adapter.addItem(new Workout_Item("", "", "", R.drawable.img_blank));
             gridview.setAdapter(adapter);

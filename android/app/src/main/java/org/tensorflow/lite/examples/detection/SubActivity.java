@@ -1,33 +1,27 @@
 package org.tensorflow.lite.examples.detection;
 
 import android.app.Activity;
-
-import android.content.Intent;
 import android.content.Context;
-
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-
-import android.view.View;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-
-import android.util.Log;
-import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 public class SubActivity extends Activity {
 
@@ -43,7 +37,7 @@ public class SubActivity extends Activity {
     // 그리드 뷰 선언
     private final String TAG = SubActivity.class.getSimpleName();
     private GridView gridview = null;
-    private SubActivity.GridViewAdapter adapter = null;
+    private GridViewAdapter adapter = null;
 
     private class JsoupAsyncTask extends AsyncTask<String, Void, Void> {
 
@@ -125,7 +119,6 @@ public class SubActivity extends Activity {
                 "\n\n효과 : 래터럴 레이즈는 측면 삼각근을 단련하는 운동이다.  양손에 덤벨을 들고 실시하는 것이 보통이나 케이블, 머신 등으로 대체할 수도 있다" +
                 "\n\n주의점 : 팔꿈치가 어깨보다 더 높게 올라가지 않게 한다 ";
 
-
         private String a8 = "\n기구 이름 : 레그익스텐션 " +
                 "\n주운동 부위 :허벅지 앞 " +
                 "\n부운동부위 : 대퇴사두근 " +
@@ -136,7 +129,6 @@ public class SubActivity extends Activity {
                 "\n*또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동 " +
                 "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
                 "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
-
 
         private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
@@ -529,7 +521,6 @@ public class SubActivity extends Activity {
                 "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
                 "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
 
-
         private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
                 "\n부운동부위 : 대둔근 , 슬굴곡근" +
@@ -593,6 +584,11 @@ public class SubActivity extends Activity {
                 "\n*무릎과 등 하부에 부담을 줄이고 대퇴를 강도 높게 자극할 수 있다" +
                 "\n\n효과 : 바벨 스쿼트 운동에 비해 고립된 운동으로 대퇴부와 둔부 크기를 증가시키기 위한 운동 " +
                 "\n\n주의점 : 안정성을 위해 허리는 항상 곧게 편다, 무릎을 바깥쪽 또는 안쪽으로 굽히지 말고, 일정하게 수평을 이루며 동작을 실시한다";
+
+
+
+
+
 
         @Override
         public int getCount() {
@@ -683,9 +679,7 @@ public class SubActivity extends Activity {
                         textviewHtmlDocument.setText(a7);
                         workout_view.setImageResource(R.drawable.leg_extension);
                         workout_name.setText("레그 익스텐션 머신");
-
                     } else if (workoutItem.getName().contains("레터럴 레이즈")) {
-                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a8);
                         workout_view.setImageResource(R.drawable.lateral_raise);
                         workout_name.setText("레터럴 레이즈 머신");
@@ -728,7 +722,7 @@ public class SubActivity extends Activity {
                     }
                 }
             });
-
+            //test
             return convertView;  //뷰 객체 반환
         }
     }

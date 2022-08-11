@@ -7,50 +7,78 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/workout_name"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@drawable/border_routine"
-        android:fontFamily="@font/healthset_gothic_light"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:paddingTop="5dp"
-        android:paddingEnd="5dp"
-        android:paddingStart="5dp"
-        android:paddingBottom="5dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@id/btn3"/>
-
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/border_btn3"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:text="운동기구 사용법 보러가기"
-        android:fontFamily="@font/neodgm"/>
+        android:text="운동기구 이름"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="30dp"/>
 
-    <TextView
-        android:id="@+id/routine_intro"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:gravity="center_vertical"
-        android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"
-        app:layout_constraintBottom_toTopOf="@+id/gridview"/>
-
-    <GridView
-        android:id="@+id/gridview"
+    <ScrollView
+        android:id="@+id/sub_activity_page"
         android:layout_width="match_parent"
-        android:layout_height="395dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/border_routine"
-        android:numColumns="4"
-        android:layout_gravity="center_horizontal|center_vertical" />
+        android:layout_height="wrap_content"
+        tools:context=".SubActivity">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/workout_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:background="@drawable/border_routine"
+                android:fontFamily="@font/healthset_gothic_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingBottom="5dp"
+                android:text="운동방법"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/border_btn3"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="운동기구 사용법 보러가기"
+                android:fontFamily="@font/neodgm"/>
+
+            <TextView
+                android:id="@+id/routine_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"
+                app:layout_constraintBottom_toTopOf="@+id/gridview"/>
+
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="395dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/border_routine"
+                android:numColumns="4"
+                android:layout_gravity="center_horizontal|center_vertical" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

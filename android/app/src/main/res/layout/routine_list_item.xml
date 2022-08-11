@@ -34,7 +34,7 @@
                 android:layout_height="45dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:text=""
-                android:fontFamily="@font/healthset_gothic_light"
+                android:fontFamily="@font/healthset_gothic_bold"
                 android:background="@drawable/border_central"/>
 
             <LinearLayout

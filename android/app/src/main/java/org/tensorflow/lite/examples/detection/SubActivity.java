@@ -682,7 +682,7 @@ public class SubActivity extends Activity {
                     }
                 }
             });
-
+            //test
             return convertView;  //뷰 객체 반환
         }
     }

@@ -146,6 +146,7 @@ public class MultiBoxTracker {
 
       float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
       canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
+// 사물인식 박스 %없애기
 
       @SuppressLint("DefaultLocale") String labelString;
       labelString = String.format("%s", recognition.title);

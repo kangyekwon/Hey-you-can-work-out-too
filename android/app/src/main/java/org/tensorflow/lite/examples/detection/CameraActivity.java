@@ -258,6 +258,8 @@ public abstract class CameraActivity extends AppCompatActivity
     //minusImageView.setOnClickListener(this);
   }
 
+
+
   protected ArrayList<String> getModelStrings(AssetManager mgr, String path){
     ArrayList<String> res = new ArrayList<String>();
     try {

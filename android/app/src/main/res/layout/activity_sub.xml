@@ -8,11 +8,14 @@
 
     <TextView
         android:id="@+id/workout_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="운동기구 이름"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="30dp"/>
+        android:background="@drawable/border_workout_name"
+        android:text="운동기구 이름" />
 
     <ScrollView
         android:id="@+id/sub_activity_page"
@@ -34,10 +37,18 @@
                 android:layout_marginEnd="10dp"/>
 
             <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="운동방법"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:textSize="15sp"/>
+
+            <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:background="@drawable/border_routine"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/healthset_gothic_light"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
@@ -46,9 +57,10 @@
                 android:paddingTop="5dp"
                 android:paddingEnd="5dp"
                 android:paddingStart="5dp"
-                android:paddingBottom="5dp"
+                android:paddingBottom="20dp"
                 android:text="운동방법"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/btn3"
@@ -67,8 +79,7 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
-                android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"
-                app:layout_constraintBottom_toTopOf="@+id/gridview"/>
+                android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"/>
 
             <GridView
                 android:id="@+id/gridview"

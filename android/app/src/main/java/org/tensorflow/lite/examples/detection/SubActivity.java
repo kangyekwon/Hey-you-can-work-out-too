@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -128,7 +129,6 @@ public class SubActivity extends Activity {
                 "\n*또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동 " +
                 "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
                 "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
-
 
         private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
@@ -429,6 +429,8 @@ public class SubActivity extends Activity {
     /* 그리드뷰 어댑터 */
     class GridViewAdapter extends BaseAdapter {
         ImageView workout_view = (ImageView)findViewById(R.id.workout_view);
+        ScrollView sub_activity_page = (ScrollView)findViewById(R.id.sub_activity_page);
+        TextView workout_name = (TextView)findViewById(R.id.workout_name);
         ArrayList<Workout_Item> items = new ArrayList<Workout_Item>();
         private String a1 = "\n기구 이름 : 체스트프레스머신" +
                 "\n주운동 부위 : 가슴근육(대흉근)" +
@@ -518,7 +520,6 @@ public class SubActivity extends Activity {
                 "\n*또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동 " +
                 "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
                 "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
-
 
         private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
@@ -638,47 +639,86 @@ public class SubActivity extends Activity {
                 @Override
                 public void onClick(View view) {
                     if (workoutItem.getName().contains("체스트 프레스")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a1);
                         workout_view.setImageResource(R.drawable.chest_press);
-                    } else if (workoutItem.getName().contains("랫 풀 다운")) {
+                        workout_name.setText("체스트 프레스 머신");
+                    }
+                    else if (workoutItem.getName().contains("랫 풀 다운")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a2);
                         workout_view.setImageResource(R.drawable.lat_pulldown);
-                    } else if (workoutItem.getName().contains("시티드 로우")) {
+                        workout_name.setText("랫 풀 다운");
+                    }
+                    else if (workoutItem.getName().contains("시티드 로우")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a3);
                         workout_view.setImageResource(R.drawable.seated_row);
-                    } else if (workoutItem.getName().contains("암 컬 머신")) {
+                        workout_name.setText("시티드 로우 머신");
+                    }
+                    else if (workoutItem.getName().contains("암 컬")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a4);
                         workout_view.setImageResource(R.drawable.bicep_curl);
-                    } else if (workoutItem.getName().contains("체스트 플라이")) {
+                        workout_name.setText("암 컬 머신");
+                    }
+                    else if (workoutItem.getName().contains("체스트 플라이")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a5);
                         workout_view.setImageResource(R.drawable.chest_fly);
+                        workout_name.setText("체스트 플라이 머신");
+
                     } else if (workoutItem.getName().contains("치닝")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a6);
                         workout_view.setImageResource(R.drawable.chining_dipping);
-                    } else if (workoutItem.getName().contains("레그익스텐션")) {
+                        workout_name.setText("치닝 디핑");
+
+                    } else if (workoutItem.getName().contains("레그 익스텐션")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a7);
-                        workout_view.setImageResource(R.drawable.chining_dipping);
+                        workout_view.setImageResource(R.drawable.leg_extension);
+                        workout_name.setText("레그 익스텐션 머신");
                     } else if (workoutItem.getName().contains("레터럴 레이즈")) {
                         textviewHtmlDocument.setText(a8);
                         workout_view.setImageResource(R.drawable.lateral_raise);
+                        workout_name.setText("레터럴 레이즈 머신");
+
                     } else if (workoutItem.getName().contains("레그 프레스")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a9);
                         workout_view.setImageResource(R.drawable.leg_press);
+                        workout_name.setText("레그 프레스 머신");
+
                     } else if (workoutItem.getName().contains("레그 컬")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a10);
                         workout_view.setImageResource(R.drawable.leg_curl);
+                        workout_name.setText("레그 컬 머신");
+
                     } else if (workoutItem.getName().contains("시티드 딥스")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a11);
                         workout_view.setImageResource(R.drawable.seated_dip_machine);
+                        workout_name.setText("시티드 딥스 머신");
+
                     } else if (workoutItem.getName().contains("숄더 프레스")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a12);
                         workout_view.setImageResource(R.drawable.shoulder_press);
+                        workout_name.setText("숄더 프레스 머신");
+
                     } else if (workoutItem.getName().contains("스쿼트")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a13);
                         workout_view.setImageResource(R.drawable.smith_machine);
+                        workout_name.setText("스미스 머신");
+
                     } else if (workoutItem.getName().contains("벤치 프레스")) {
+                        sub_activity_page.fullScroll(ScrollView.FOCUS_UP);
                         textviewHtmlDocument.setText(a13);
                         workout_view.setImageResource(R.drawable.smith_machine);
+                        workout_name.setText("스미스 머신");
                     }
                 }
             });

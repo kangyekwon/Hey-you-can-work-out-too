@@ -124,8 +124,19 @@ public class SubActivity extends Activity {
                 "\n\n효과 : 래터럴 레이즈는 측면 삼각근을 단련하는 운동이다.  양손에 덤벨을 들고 실시하는 것이 보통이나 케이블, 머신 등으로 대체할 수도 있다" +
                 "\n\n주의점 : 팔꿈치가 어깨보다 더 높게 올라가지 않게 한다 ";
 
+        private String a8 = "\n기구 이름 : 레그익스텐션 " +
+                "\n주운동 부위 :허벅지 앞 " +
+                "\n부운동부위 : 대퇴사두근 " +
+                "\n\n운동 방법 : " +
+                "\n1.등받이에 등을 대고 손잡이를 잡은 다음, 발목을 어깨너비보다 좁게 벌려서 롤패드에 고정시킨다" +
+                "\n2.다리를 들어올려 무릎을 펴서 허벅지 근육을 수축시킨다 " +
+                "\n3.천천히 저항을 느끼면서 다리를 내리며 긴장을 유지한다 " +
+                "\n*또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동 " +
+                "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
+                "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
 
-        private String a8 = "\n기구 이름 : 레그프레스" +
+
+        private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
                 "\n부운동부위 : 대둔근 , 슬굴곡근" +
                 "\n\n운동 방법 : " +
@@ -136,7 +147,7 @@ public class SubActivity extends Activity {
                 "\n\n효과 :대퇴사두근과 둔근을 강화시켜주는 대표적이고 필수적인 하체 운동이다. 초보자가 실시하기에 가장 적당한 하체 운동이며 스쿼트에 비해 허리에 가해지는 부하가 적어 비교적 무거운 무게로 운동을 할 수 있는 장점이 있다" +
                 "\n\n주의점 : 무릎을 완전히 펴지 말고 약간 구부려주는 것이 운동 효과에 좋다, 엉덩이와 허리가 항상 기구에 밀착해 있어야 한다.";
 
-        private String a9 = "\n기구 이름 : 레그컬머신" +
+        private String a10 = "\n기구 이름 : 레그컬머신" +
                 "\n주운동 부위 : 넙다리뒤근육(햄스트링)" +
                 "\n부운동부위 : 종아리근육" +
                 "\n\n운동 방법 : " +
@@ -147,7 +158,7 @@ public class SubActivity extends Activity {
                 "\n\n효과 : 대퇴후면의 슬굴곡근을 발달시키기 위한 운동이다. 스탠딩 레그 컬보다 많은 중량을 들 수 있는 것이 장점으로, 하체 근력이 약한 사람에게 필수적인 운동이다" +
                 "\n\n주의점 :엉덩이가 들리지 않게한다 , 반동을 주지 않는다 ";
 
-        private String a10 = "\n기구 이름 : 시티드딥스" +
+        private String a11 = "\n기구 이름 : 시티드딥스" +
                 "\n주운동 부위 : 가슴(대흉근) 하부" +
                 "\n부운동부위 : 상완삼두근과 전면 삼각근" +
                 "\n\n운동 방법 : " +
@@ -158,7 +169,7 @@ public class SubActivity extends Activity {
                 "\n\n주의점 : 상체를 앞으로 살짝 숙일때 허리, 가슴은 꼭 펴줘야한다, 어깨각도에 주의해야한다";
 
 
-        private String a11 = "\n기구 이름 : 숄더프레스머신" +
+        private String a12 = "\n기구 이름 : 숄더프레스머신" +
                 "\n주운동 부위 : 삼각근(어깨)" +
                 "\n부운동부위 : 상완삼두근 , 승모근 상부" +
                 "\n\n운동 방법 : " +
@@ -171,7 +182,7 @@ public class SubActivity extends Activity {
                 "\n\n주의점 :바가 지나치게 내려오게 되면 어깨에 부상을 유발할 수 있으므로 귀 높이까지만 동작한다"+
                 "\n*중력 방향에 대한 저항만이 근육에 가해지기 때문에 다양한 자극을 부여하기는 어려운 점이 있다";
 
-        private String a12 = "\n기구 이름 : 스미스머신(1번은 가슴, 2번은 하체운동)" +
+        private String a13 = "\n기구 이름 : 스미스머신(1번은 가슴, 2번은 하체운동)" +
                 "\n\n1번\n주운동 부위 : 흉근(가슴)" +
                 "\n\n운동 방법 : " +
                 "\n1.봉이 내려올때 가슴 위쪽에 닿게 셋팅한 후 벤치에 누워서 허리를 아치형으로 만들어준다" +
@@ -220,16 +231,18 @@ public class SubActivity extends Activity {
                 textviewHtmlDocument.setText(a6);
             } else if (name0.equals("레터럴레이즈머신")) {
                 textviewHtmlDocument.setText(a7);
-            } else if (name0.equals("레그프레스")) {
+            } else if (name0.equals("레그익스텐션")) {
                 textviewHtmlDocument.setText(a8);
-            } else if (name0.equals("레그컬머신")) {
+            } else if (name0.equals("레그프레스")) {
                 textviewHtmlDocument.setText(a9);
-            } else if (name0.equals("시티드딥스")) {
+            } else if (name0.equals("레그컬머신")) {
                 textviewHtmlDocument.setText(a10);
-            } else if (name0.equals("숄더프레스머신")) {
+            } else if (name0.equals("시티드딥스")) {
                 textviewHtmlDocument.setText(a11);
-            } else if (name0.equals("스미스머신")) {
+            } else if (name0.equals("숄더프레스머신")) {
                 textviewHtmlDocument.setText(a12);
+            } else if (name0.equals("스미스머신")) {
+                textviewHtmlDocument.setText(a13);
             }
         }
     }
@@ -501,8 +514,19 @@ public class SubActivity extends Activity {
                 "\n\n효과 : 래터럴 레이즈는 측면 삼각근을 단련하는 운동이다.  양손에 덤벨을 들고 실시하는 것이 보통이나 케이블, 머신 등으로 대체할 수도 있다" +
                 "\n\n주의점 : 팔꿈치가 어깨보다 더 높게 올라가지 않게 한다 ";
 
+        private String a8 = "\n기구 이름 : 레그익스텐션 " +
+                "\n주운동 부위 :허벅지 앞 " +
+                "\n부운동부위 : 대퇴사두근 " +
+                "\n\n운동 방법 : " +
+                "\n1.등받이에 등을 대고 손잡이를 잡은 다음, 발목을 어깨너비보다 좁게 벌려서 롤패드에 고정시킨다" +
+                "\n2.다리를 들어올려 무릎을 펴서 허벅지 근육을 수축시킨다 " +
+                "\n3.천천히 저항을 느끼면서 다리를 내리며 긴장을 유지한다 " +
+                "\n*또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동 " +
+                "\n\n효과 :허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다" +
+                "\n\n주의점 :상체에 반동이 일어나지 않도록 천천히 실시";
 
-        private String a8 = "\n기구 이름 : 레그프레스" +
+
+        private String a9 = "\n기구 이름 : 레그프레스" +
                 "\n주운동 부위 : 대퇴사두근 " +
                 "\n부운동부위 : 대둔근 , 슬굴곡근" +
                 "\n\n운동 방법 : " +
@@ -513,7 +537,7 @@ public class SubActivity extends Activity {
                 "\n\n효과 :대퇴사두근과 둔근을 강화시켜주는 대표적이고 필수적인 하체 운동이다. 초보자가 실시하기에 가장 적당한 하체 운동이며 스쿼트에 비해 허리에 가해지는 부하가 적어 비교적 무거운 무게로 운동을 할 수 있는 장점이 있다" +
                 "\n\n주의점 : 무릎을 완전히 펴지 말고 약간 구부려주는 것이 운동 효과에 좋다, 엉덩이와 허리가 항상 기구에 밀착해 있어야 한다.";
 
-        private String a9 = "\n기구 이름 : 레그컬머신" +
+        private String a10 = "\n기구 이름 : 레그컬머신" +
                 "\n주운동 부위 : 넙다리뒤근육(햄스트링)" +
                 "\n부운동부위 : 종아리근육" +
                 "\n\n운동 방법 : " +
@@ -524,7 +548,7 @@ public class SubActivity extends Activity {
                 "\n\n효과 : 대퇴후면의 슬굴곡근을 발달시키기 위한 운동이다. 스탠딩 레그 컬보다 많은 중량을 들 수 있는 것이 장점으로, 하체 근력이 약한 사람에게 필수적인 운동이다" +
                 "\n\n주의점 :엉덩이가 들리지 않게한다 , 반동을 주지 않는다 ";
 
-        private String a10 = "\n기구 이름 : 시티드딥스" +
+        private String a11 = "\n기구 이름 : 시티드딥스" +
                 "\n주운동 부위 : 가슴(대흉근) 하부" +
                 "\n부운동부위 : 상완삼두근과 전면 삼각근" +
                 "\n\n운동 방법 : " +
@@ -535,7 +559,7 @@ public class SubActivity extends Activity {
                 "\n\n주의점 : 상체를 앞으로 살짝 숙일때 허리, 가슴은 꼭 펴줘야한다, 어깨각도에 주의해야한다";
 
 
-        private String a11 = "\n기구 이름 : 숄더프레스머신" +
+        private String a12 = "\n기구 이름 : 숄더프레스머신" +
                 "\n주운동 부위 : 삼각근(어깨)" +
                 "\n부운동부위 : 상완삼두근 , 승모근 상부" +
                 "\n\n운동 방법 : " +
@@ -548,7 +572,7 @@ public class SubActivity extends Activity {
                 "\n\n주의점 :바가 지나치게 내려오게 되면 어깨에 부상을 유발할 수 있으므로 귀 높이까지만 동작한다"+
                 "\n*중력 방향에 대한 저항만이 근육에 가해지기 때문에 다양한 자극을 부여하기는 어려운 점이 있다";
 
-        private String a12 = "\n기구 이름 : 스미스머신(1번은 가슴, 2번은 하체운동)" +
+        private String a13 = "\n기구 이름 : 스미스머신(1번은 가슴, 2번은 하체운동)" +
                 "\n\n1번\n주운동 부위 : 흉근(가슴)" +
                 "\n\n운동 방법 : " +
                 "\n1.봉이 내려올때 가슴 위쪽에 닿게 셋팅한 후 벤치에 누워서 허리를 아치형으로 만들어준다" +
@@ -565,6 +589,11 @@ public class SubActivity extends Activity {
                 "\n*무릎과 등 하부에 부담을 줄이고 대퇴를 강도 높게 자극할 수 있다" +
                 "\n\n효과 : 바벨 스쿼트 운동에 비해 고립된 운동으로 대퇴부와 둔부 크기를 증가시키기 위한 운동 " +
                 "\n\n주의점 : 안정성을 위해 허리는 항상 곧게 편다, 무릎을 바깥쪽 또는 안쪽으로 굽히지 말고, 일정하게 수평을 이루며 동작을 실시한다";
+
+
+
+
+
 
         @Override
         public int getCount() {
@@ -632,26 +661,29 @@ public class SubActivity extends Activity {
                     } else if (workoutItem.getName().contains("치닝")) {
                         textviewHtmlDocument.setText(a6);
                         workout_view.setImageResource(R.drawable.chining_dipping);
-                    } else if (workoutItem.getName().contains("레터럴 레이즈")) {
+                    } else if (workoutItem.getName().contains("레그익스텐션")) {
                         textviewHtmlDocument.setText(a7);
+                        workout_view.setImageResource(R.drawable.chining_dipping);
+                    } else if (workoutItem.getName().contains("레터럴 레이즈")) {
+                        textviewHtmlDocument.setText(a8);
                         workout_view.setImageResource(R.drawable.lateral_raise);
                     } else if (workoutItem.getName().contains("레그 프레스")) {
-                        textviewHtmlDocument.setText(a8);
+                        textviewHtmlDocument.setText(a9);
                         workout_view.setImageResource(R.drawable.leg_press);
                     } else if (workoutItem.getName().contains("레그 컬")) {
-                        textviewHtmlDocument.setText(a9);
+                        textviewHtmlDocument.setText(a10);
                         workout_view.setImageResource(R.drawable.leg_curl);
                     } else if (workoutItem.getName().contains("시티드 딥스")) {
-                        textviewHtmlDocument.setText(a10);
+                        textviewHtmlDocument.setText(a11);
                         workout_view.setImageResource(R.drawable.seated_dip_machine);
                     } else if (workoutItem.getName().contains("숄더 프레스")) {
-                        textviewHtmlDocument.setText(a11);
+                        textviewHtmlDocument.setText(a12);
                         workout_view.setImageResource(R.drawable.shoulder_press);
                     } else if (workoutItem.getName().contains("스쿼트")) {
-                        textviewHtmlDocument.setText(a12);
+                        textviewHtmlDocument.setText(a13);
                         workout_view.setImageResource(R.drawable.smith_machine);
                     } else if (workoutItem.getName().contains("벤치 프레스")) {
-                        textviewHtmlDocument.setText(a12);
+                        textviewHtmlDocument.setText(a13);
                         workout_view.setImageResource(R.drawable.smith_machine);
                     }
                 }

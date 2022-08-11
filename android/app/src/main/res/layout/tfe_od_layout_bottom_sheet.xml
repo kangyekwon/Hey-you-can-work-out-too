@@ -29,6 +29,13 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인식한 운동기구를 탭하세요. \n운동기구를 길게 탭하면 목록에서 제거됩니다."
+        android:fontFamily="@font/healthset_gothic_bold"
+        android:gravity="center_horizontal" />
+
 
     <View
         android:layout_width="match_parent"
@@ -91,6 +98,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop = "5dp"
+        android:layout_marginBottom = "5dp"
+        android:fontFamily="@font/neodgm"
         android:text="인식한 운동기구" />
 
 

@@ -205,7 +205,8 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });
-// 바텀시트 정리
+
+    // 바텀시트 정리
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
             new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -215,7 +216,7 @@ public abstract class CameraActivity extends AppCompatActivity
                 //                int width = bottomSheetLayout.getMeasuredWidth();
 //                int height = gestureLayout.getMeasuredHeight();
 
-                sheetBehavior.setPeekHeight(400);
+                sheetBehavior.setPeekHeight(300);
                 sheetBehavior.setHideable(false);
               }
             });

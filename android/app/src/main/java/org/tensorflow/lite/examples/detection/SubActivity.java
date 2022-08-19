@@ -20,6 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+
+import android.util.Log;
+import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
 

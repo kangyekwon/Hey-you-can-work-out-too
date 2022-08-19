@@ -272,7 +272,6 @@ public class SubActivity extends Activity {
         HorizontalScrollView scroll2 = (HorizontalScrollView) findViewById(R.id.routine2);
         LinearLayout layout = (LinearLayout) findViewById(R.id.routine_view);
         LinearLayout layout2 = (LinearLayout) findViewById(R.id.routine_view2);
-        LinearLayout lin = (LinearLayout) findViewById(R.id.sub_activity_layout);
 
         ScrollView sub_activity_page = (ScrollView) findViewById(R.id.sub_activity_page);
 

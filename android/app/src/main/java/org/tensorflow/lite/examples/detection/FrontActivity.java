@@ -11,6 +11,8 @@ import android.widget.Button;
 public class FrontActivity extends Activity {
     Button btn_to_activity;
     ImageView front;
+    // BackPressHandler 객체 선언, 할당
+    private BackPressHandler backPressHandler = new BackPressHandler(this);
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,5 +27,12 @@ public class FrontActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Default
+        backPressHandler.onBackPressed();
     }
 }

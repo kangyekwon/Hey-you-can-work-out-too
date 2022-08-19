@@ -12,7 +12,6 @@
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal|center_vertical"
         android:background="@drawable/border_workout_name"
         android:text="운동기구 이름" />
@@ -24,6 +23,7 @@
         tools:context=".SubActivity">
 
         <LinearLayout
+            android:id="@+id/sub_activity_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -60,7 +60,7 @@
                 android:paddingBottom="20dp"
                 android:text="운동방법"
                 android:textColor="#000000"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
             <Button
                 android:id="@+id/btn3"
@@ -81,15 +81,48 @@
                 android:gravity="center_vertical"
                 android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"/>
 
-            <GridView
-                android:id="@+id/gridview"
+            <HorizontalScrollView
+                android:id="@+id/routine"
                 android:layout_width="match_parent"
-                android:layout_height="395dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/border_routine"
-                android:numColumns="4"
-                android:layout_gravity="center_horizontal|center_vertical" />
+                android:layout_marginBottom="10dp"
+                android:scrollbars="horizontal"
+                tools:context=".SubActivity">
+
+                <LinearLayout
+                    android:id="@+id/routine_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/routine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="horizontal"
+                tools:context=".SubActivity">
+
+                <LinearLayout
+                    android:id="@+id/routine_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
         </LinearLayout>
+
     </ScrollView>
+
 </LinearLayout>

@@ -35,7 +35,8 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:text="운동기구"
-                android:background="@drawable/border_up"/>
+                android:background="@drawable/border_up"
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,7 +51,8 @@
                     android:fontFamily="@font/healthset_gothic_bold"
                     android:gravity="center_horizontal"
                     android:text="세트"
-                    android:paddingStart="10dp"/>
+                    android:paddingStart="10dp"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/tv_num"
@@ -59,7 +61,8 @@
                     android:gravity="center_horizontal"
                     android:text="횟수"
                     android:fontFamily="@font/healthset_gothic_bold"
-                    android:paddingEnd="10dp"/>
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 

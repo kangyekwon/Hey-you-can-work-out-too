@@ -3,31 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/front">
 
     <ImageView
         android:id="@+id/front"
-        android:layout_width="447dp"
-        android:layout_height="514dp"
+        android:layout_width="235dp"
+        android:layout_height="295dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/front" />
+        app:layout_constraintVertical_bias="0.31"
+
+        tools:src="@drawable/icon_front_02" />
 
     <Button
         android:id="@+id/to_activity"
         android:layout_width="171dp"
         android:layout_height="71dp"
+        android:background="@drawable/border_to_activity"
+        android:fontFamily="@font/neodgm"
         android:text="운동하러 가볼까?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/front"
-        app:layout_constraintVertical_bias="0.368"
-        android:background="@drawable/border_to_activity"
-        android:fontFamily="@font/neodgm"/>
+        app:layout_constraintVertical_bias="0.511" />
 </androidx.constraintlayout.widget.ConstraintLayout>

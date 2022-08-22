@@ -36,50 +36,97 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
 
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="운동방법"
+            <LinearLayout
+                android:id="@+id/workout_effect"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:textSize="15sp"/>
+                android:layout_marginEnd="10dp">
+                <TextView
+                    android:id="@+id/workout_effect1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:text=""
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/workout_effect2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:text=""
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="15sp"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/healthset_gothic_light"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:paddingTop="5dp"
                 android:paddingEnd="5dp"
                 android:paddingStart="5dp"
                 android:paddingBottom="20dp"
-                android:text="운동방법"
+                android:text="운동방법1"
                 android:textColor="#000000"
                 android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:text="운동방법2"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:background="@drawable/border_workout_methods_2"/>
 
             <Button
                 android:id="@+id/btn3"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/border_btn3"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:text="운동기구 사용법 보러가기"
-                android:fontFamily="@font/neodgm"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/border_btn3"
+                android:text="운동기구 사용법 보러가기" />
 
             <TextView
                 android:id="@+id/routine_intro"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center_vertical"
-                android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"/>
+                android:text="이 운동기구가 포함된 루틴을 추천해드릴게요"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/a_routine"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="루틴A"
+                android:textSize="15sp"/>
 
             <HorizontalScrollView
                 android:id="@+id/routine"
@@ -100,6 +147,15 @@
                 </LinearLayout>
 
             </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/b_routine"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textSize="15sp"/>
 
             <HorizontalScrollView
                 android:id="@+id/routine2"

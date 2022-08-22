@@ -19,7 +19,7 @@ public class FrontActivity extends Activity {
         setContentView(R.layout.front);
         btn_to_activity = findViewById(R.id.to_activity);
         front = (ImageView)findViewById(R.id.front);
-        front.setImageResource(R.drawable.front);
+        front.setImageResource(R.drawable.icon_front_02);
         btn_to_activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

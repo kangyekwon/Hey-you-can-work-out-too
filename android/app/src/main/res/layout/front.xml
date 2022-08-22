@@ -20,14 +20,46 @@
 
     <Button
         android:id="@+id/to_activity"
-        android:layout_width="171dp"
-        android:layout_height="71dp"
+        android:layout_width="154dp"
+        android:layout_height="60dp"
         android:background="@drawable/border_to_activity"
-        android:fontFamily="@font/healthset_gothic_bold"
-        android:text="운동하러 가볼까요?"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Let's go"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/front"
-        app:layout_constraintVertical_bias="0.511" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/front3"
+        android:layout_width="236dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_activity"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/title01" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이준한 강예권"
+        android:textAllCaps="true"
+        android:textColor="#FAF7F7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/front3"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
